@@ -1,5 +1,6 @@
 package com.example.hirecore.factory;
 
+import com.example.hirecore.Candidate;
 import com.example.hirecore.manager.CandidateManager;
 import com.example.hirecore.notifications.IObservable;
 import com.example.hirecore.stages.Applied;
