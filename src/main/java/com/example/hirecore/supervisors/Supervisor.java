@@ -10,7 +10,6 @@ public abstract class Supervisor implements IObserver {
     private String email;
     private String password;
 
-    /** Cómo se identifica este supervisor en el correo simulado, p. ej. "Reclutador". */
     @Override
     public abstract String getRole();
 

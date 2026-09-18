@@ -14,12 +14,6 @@ import java.awt.Font;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-/**
- * Menú interactivo con JOptionPane: la sesión arranca automáticamente como
- * la reclutadora (no hay selección de supervisor) y luego se muestra un
- * menú con las funcionalidades pedidas: avanzar de etapa, deshacer el
- * último cambio, rechazar y ver el historial de cambios de un candidato.
- */
 public class HireCoreMenu {
 
     private static final String[] MAIN_OPTIONS = {
@@ -43,10 +37,6 @@ public class HireCoreMenu {
 
         mainMenu(supervisor);
     }
-
-    // ------------------------------------------------------------------
-    // Menú principal
-    // ------------------------------------------------------------------
 
     private void mainMenu(Supervisor supervisor) {
         while (true) {
@@ -145,7 +135,6 @@ public class HireCoreMenu {
                 "Historial de " + candidate.getName(), JOptionPane.PLAIN_MESSAGE);
     }
 
-    /** Arma un panel desplazable con el historial numerado, uno debajo del otro, fácil de leer. */
     private JScrollPane buildHistoryView(List<CandidateChangeRecord> history) {
         StringBuilder text = new StringBuilder();
         for (int i = 0; i < history.size(); i++) {
@@ -168,10 +157,6 @@ public class HireCoreMenu {
         scrollPane.setPreferredSize(new Dimension(420, Math.min(400, 40 + history.size() * 60)));
         return scrollPane;
     }
-
-    // ------------------------------------------------------------------
-    // Utilidades de UI
-    // ------------------------------------------------------------------
 
     private Candidate pickCandidate(String title) {
         List<Candidate> candidates = pipeline.getCandidates();
